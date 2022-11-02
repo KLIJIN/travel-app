@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styles from "./Filters.module.scss";
 
 const cities = [
@@ -22,10 +23,18 @@ const cities = [
 ];
 
 const Filters: React.FC = () => {
+  const [filter, setFilter] = useState("");
+
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.filterContainer}>
       {cities.map((city) => (
-        <button key={city.location}>{city.location}</button>
+        <button
+          onClick={() => setFilter(city.location)}
+          key={city.location}
+          className={`${city.location === filter ? styles.active : ""}`}
+        >
+          {city.location}
+        </button>
       ))}
     </div>
   );
