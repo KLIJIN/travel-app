@@ -1,4 +1,4 @@
-import Footer from "../Footer/Footer";
+import Footer from "../Footer";
 import styles from "./Layout.module.scss";
 
 type Props = {
@@ -6,10 +6,10 @@ type Props = {
 };
 
 const Layout: React.FC<Props> = ({ children }) => (
-  <div>
+  <>
     {children}
     <Footer />
-  </div>
+  </>
 );
 
 export default Layout;

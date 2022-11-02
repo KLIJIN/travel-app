@@ -30,11 +30,9 @@ export default function Footer() {
           <Link
             href={item.link}
             className={pathname === item.link ? styles.active : ""}
+            key={item.icon}
           >
-            <button
-              className={pathname === item.link ? styles.active : ""}
-              key={item.icon}
-            >
+            <button className={pathname === item.link ? styles.active : ""}>
               <span className="material-icons-outlined">{item.icon}</span>
             </button>
           </Link>
