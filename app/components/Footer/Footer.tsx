@@ -22,12 +22,15 @@ const navItems = [
 ];
 
 export default function Footer() {
-  const { push, pathname } = useRouter();
+  const { pathname } = useRouter();
   return (
     <div className={styles.footer}>
       <nav>
         {navItems.map((item) => (
-          <Link href={item.link}  className={pathname === item.link ? styles.active : ""}>
+          <Link
+            href={item.link}
+            className={pathname === item.link ? styles.active : ""}
+          >
             <button
               className={pathname === item.link ? styles.active : ""}
               key={item.icon}

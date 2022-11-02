@@ -7,6 +7,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   background-color: #161617;
+  color: white;
 }
 
 a {
@@ -37,6 +38,7 @@ ul {
 button {
   cursor: pointer;
   background-color: transparent;
+  color: inherit;
 }
 
 input,
