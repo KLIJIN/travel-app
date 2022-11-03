@@ -1,5 +1,6 @@
 import { ChangeEvent, useState, KeyboardEvent } from "react";
 import { Place } from "../../../pages/place/place";
+import { HiOutlineSearchCircle } from "react-icons/hi";
 import { TypeSetState } from "./Search.d";
 import styles from "./Search.module.scss";
 
@@ -25,9 +26,17 @@ const SearchField: React.FC<SearchFieldProps> = ({ setPlaces, initPlaces }) => {
     );
   };
 
+  const iconStyle = {
+    color: "white",
+    opacity: "0.8",
+    marginLeft: "10px",
+    height: '25px',
+    width: '25px',
+  };
+
   return (
     <div className={styles.search}>
-      <span className="material-icons-outlined">search</span>
+      <HiOutlineSearchCircle style={iconStyle} />
       <input
         type="text"
         onChange={changeHandler}
