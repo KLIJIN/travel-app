@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Place } from "../../../pages/place/place";
+import { TypeSetState } from "../Search/Search.d";
 import styles from "./Filters.module.scss";
 
 const cities = [
@@ -6,30 +8,50 @@ const cities = [
     location: "Paris",
   },
   {
-    location: "Bora Bora",
+    location: "Japan",
   },
   {
-    location: "Maui",
+    location: "Norway",
   },
   {
-    location: "Tahiti",
+    location: "Italy",
   },
   {
     location: "Brazil",
   },
   {
-    location: "Norway",
+    location: "usa",
   },
 ];
 
-const Filters: React.FC = () => {
+interface FiltersProps {
+  setPlaces: TypeSetState<Place[]>;
+  initPlaces: Place[];
+}
+
+const Filters: React.FC<FiltersProps> = ({ setPlaces, initPlaces }) => {
   const [filter, setFilter] = useState("");
+
+  const clickHandler = async (location: string) => {
+    if (filter === location) {
+      await setFilter("");
+      setPlaces(initPlaces);
+    } else {
+      await setFilter(location);
+      setPlaces(
+        initPlaces.filter(
+          (place) =>
+            place.location.country.toLowerCase() === location.toLowerCase()
+        )
+      );
+    }
+  };
 
   return (
     <div className={styles.filterContainer}>
       {cities.map((city) => (
         <button
-          onClick={() => setFilter(city.location)}
+          onClick={() => clickHandler(city.location)}
           key={city.location}
           className={`${city.location === filter ? styles.active : ""}`}
         >

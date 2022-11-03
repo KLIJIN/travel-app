@@ -7,8 +7,10 @@ type Props = {
 
 const Layout: React.FC<Props> = ({ children }) => (
   <>
-    {children}
-    <Footer />
+    <div>
+      {children}
+      <Footer />
+    </div>
   </>
 );
 

@@ -8,8 +8,7 @@ const places: Place[] = [
   {
     slug: "tokyo",
     description: "asia",
-    // imagePath: japanImg.src,
-    imagePath: 'http://localhost:3000/img/japan.jpg',
+    imagePath: 'img/japan.jpg',
     location: {
       city: "Tokyo",
       country: "Japan",
@@ -23,8 +22,7 @@ const places: Place[] = [
   {
     slug: "venezia",
     description: "wefwewegewwefew",
-    imagePath: 'http://localhost:3000/img/italy.jpg',
-    // imagePath: italyImg.src,
+    imagePath: 'img/italy.jpg',
     location: { country: "Italy", city: "Venezia" },
     rating: 5,
     duration: "7 days",
@@ -35,8 +33,7 @@ const places: Place[] = [
   {
     slug: "newyork",
     description: "wefwewegewwefew",
-    imagePath: 'http://localhost:3000/img/usa.jpg',
-    // imagePath: italyImg.src,
+    imagePath: 'img/usa.jpg',
     location: { country: "USA", city: "New York" },
     rating: 5,
     duration: "12 days",

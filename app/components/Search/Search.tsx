@@ -1,11 +1,28 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useState, KeyboardEvent } from "react";
+import { Place } from "../../../pages/place/place";
+import { TypeSetState } from "./Search.d";
 import styles from "./Search.module.scss";
 
-const SearchField: React.FC = () => {
+interface SearchFieldProps {
+  setPlaces: TypeSetState<Place[]>;
+  initPlaces: Place[];
+}
+
+const SearchField: React.FC<SearchFieldProps> = ({ setPlaces, initPlaces }) => {
   const [searchValue, setSearchValue] = useState("");
 
   const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-    setSearchValue(e.target.value);
+    const currValue = e.target.value;
+
+    setSearchValue(currValue);
+
+    setPlaces(
+      initPlaces.filter(
+        (place) =>
+          place.location.city.toLowerCase().includes(currValue) ||
+          place.location.country.toLowerCase().includes(currValue)
+      )
+    );
   };
 
   return (
