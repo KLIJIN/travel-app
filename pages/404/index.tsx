@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Layout from "../../app/components/Layout/Layout";
+import Layout from "app/components/Layout/Layout";
 import styles from "./404.module.scss";
 
 export default function Custom404() {

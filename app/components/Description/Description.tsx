@@ -1,7 +1,8 @@
-import { Place } from "../../../pages/place/place";
+import { Place } from "pages/place/place";
 import { FiMapPin } from "react-icons/fi";
 import { FaStar } from "react-icons/fa";
 import { FcCalendar } from "react-icons/fc";
+import Map from './Map';
 import styles from "./Description.module.scss";
 
 type DescriptionProps = {
@@ -28,6 +29,7 @@ const Description: React.FC<DescriptionProps> = ({ place }) => {
           <span>{place.duration}</span>
         </div>
       </div>
+      <Map />
     </div>
   );
 };

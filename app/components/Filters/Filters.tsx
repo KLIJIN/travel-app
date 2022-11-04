@@ -1,28 +1,7 @@
 import { useState } from "react";
-import { Place } from "../../../pages/place/place";
-import { TypeSetState } from "../Search/Search.d";
+import { Place } from "pages/place/place";
+import { TypeSetState } from "app/components/Search/Search.d";
 import styles from "./Filters.module.scss";
-
-const cities = [
-  {
-    location: "Paris",
-  },
-  {
-    location: "Japan",
-  },
-  {
-    location: "Norway",
-  },
-  {
-    location: "Italy",
-  },
-  {
-    location: "Brazil",
-  },
-  {
-    location: "usa",
-  },
-];
 
 interface FiltersProps {
   setPlaces: TypeSetState<Place[]>;
@@ -49,13 +28,13 @@ const Filters: React.FC<FiltersProps> = ({ setPlaces, initPlaces }) => {
 
   return (
     <div className={styles.filterContainer}>
-      {cities.map((city) => (
+      {initPlaces.map((city) => (
         <button
-          onClick={() => clickHandler(city.location)}
-          key={city.location}
-          className={`${city.location === filter ? styles.active : ""}`}
+          onClick={() => clickHandler(city.location.country)}
+          key={city.location.country}
+          className={`${city.location.country === filter ? styles.active : ""}`}
         >
-          {city.location}
+          {city.location.country}
         </button>
       ))}
     </div>

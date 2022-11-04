@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
-import { Place } from "../../place/place";
+import { Place } from "pages/place/place.d";
 import { places } from "./places";
 
 export default function handler(

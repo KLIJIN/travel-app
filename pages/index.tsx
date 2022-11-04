@@ -3,14 +3,13 @@ import Head from "next/head";
 import Image from "next/image";
 import { type } from "os";
 import { useEffect, useState } from "react";
-import Filters from "../app/components/Filters";
-import Footer from "../app/components/Footer";
-import Layout from "../app/components/Layout";
-import Places from "../app/components/Places";
-import SearchField from "../app/components/Search";
-import SearchSection from "../app/components/SearchSection";
-import { API_URL } from "../app/constants";
-import styles from "../styles/Home.module.scss";
+import Filters from "app/components/Filters";
+import Footer from "app/components/Footer";
+import Layout from "app/components/Layout";
+import Places from "app/components/Places";
+import SearchField from "app/components/Search";
+import SearchSection from "app/components/SearchSection";
+import styles from "styles/Home.module.scss";
 import { Place } from "./place/place";
 
 type HomeProps = {

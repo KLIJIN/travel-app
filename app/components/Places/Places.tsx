@@ -14,7 +14,7 @@ const Places: React.FC<PlacesProps> = ({ places }) => {
           <Link href={`/place/${item.slug}`} key={item.slug}>
             <div
               className={styles.item}
-              style={{ backgroundImage: `url(${item.imagePath})` }}
+              style={{ backgroundImage: `url(/img/${item.imagePath})` }}
             >
               <div
                 className={styles.title}

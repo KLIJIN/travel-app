@@ -1,9 +1,11 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { useRouter } from "next/router";
-import BookingButton from "../../app/components/BookingButton";
-import Description from "../../app/components/Description";
-import Header from "../../app/components/Header";
-import Layout from "../../app/components/Layout/Layout";
+import BookingButton from "app/components/BookingButton";
+import Description from "app/components/Description";
+import Header from "app/components/Header";
+import Layout from "app/components/Layout/Layout";
+import Wrapper from "app/components/Wrapper";
+
 import { Place } from "./place.d";
 
 type SinglePlaceProps = {
@@ -12,13 +14,14 @@ type SinglePlaceProps = {
 
 const SinglePlace: NextPage<SinglePlaceProps> = ({ place }) => {
   const router = useRouter();
-  // console.log("SinglePlace", place);
   return (
     <>
       <Layout>
-        <Header />
-        <Description place={place} />
-        <BookingButton />
+        <Wrapper imagePath={place.imagePath}>
+          <Header />
+          <Description place={place} />
+          <BookingButton />
+        </Wrapper>
       </Layout>
     </>
   );
@@ -44,7 +47,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const response = await fetch(`${process.env.API_URL}/places/${params?.slug}`);
   const place = await response.json();
 
-  console.log("getStaticProps", place);
+  // console.log("getStaticProps", place);
   return { props: { place } };
 };
 

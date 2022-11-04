@@ -1,1 +1,59 @@
 @import "../../../styles/variables";
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.btnContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 355px;
+  justify-content: space-between;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+.buttonContainer {
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.05);
+  z-index: 10;
+  backdrop-filter: blur(10px);
+}
+
+.favorites {
+  position: relative;
+
+  > ul {
+    position: absolute;
+    background-color: #222223;
+    border-radius: 15px;
+    padding: 1rem;
+    z-index: 2;
+    top: calc(100% + 10px);
+    right: 0;
+    width: max-content;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+
+    > li {
+      > a {
+        text-decoration: none;
+        color: $white;
+        display: block;
+        padding: 0.5rem 2rem;
+        border-radius: 10px;
+        transition: background-color 0.4s ease-in-out;
+        &:hover {
+          background-color: #1c1c1e;
+        }
+      }
+    }
+  }
+}

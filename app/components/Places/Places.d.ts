@@ -1,4 +1,4 @@
-import { Place } from "../../../pages/place/place";
+import { Place } from "pages/place/place";
 
 export interface PlacesProps {
   places: Place[];

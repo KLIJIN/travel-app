@@ -1,4 +1,4 @@
-import Footer from "../Footer";
+import Footer from "app/components/Footer";
 import styles from "./Layout.module.scss";
 
 type Props = {

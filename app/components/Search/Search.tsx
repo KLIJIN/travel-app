@@ -1,5 +1,5 @@
 import { ChangeEvent, useState, KeyboardEvent } from "react";
-import { Place } from "../../../pages/place/place";
+import { Place } from "pages/place/place";
 import { HiOutlineSearchCircle } from "react-icons/hi";
 import { TypeSetState } from "./Search.d";
 import styles from "./Search.module.scss";
